@@ -144,7 +144,7 @@ class WebTwitter {
             if (!finderRunning) return false;
             lastRequestTime = Date.now();
             $.ajax({
-                    url: 'https://twitter.com/' + profileUsername + '/' + apiPart + '/users?include_available_features=1&include_entities=1&include_ext_has_nft_avatar=1&reset_error_state=false&max_position=' + position,
+                    url: 'https://twitter.com/' + profileUsername + '/' + apiPart + '/users?include_available_features=1&include_entities=1&include_ext_has_nft_avatar=0&reset_error_state=false&max_position=' + position,
                     method: 'GET',
                     dataType: 'json'
                 })
@@ -330,7 +330,7 @@ class MobileTwitter {
                     i++;
                 }
                 chunks = chunks.map((element) => {
-                    let url = 'users/lookup.json?include_entities=true&include_blocking=true&include_ext_has_nft_avatar=1'
+                    let url = 'users/lookup.json?include_entities=true&include_blocking=true&include_ext_has_nft_avatar=0'
                     return this._makeRequest({
                         url: url,
                         headers: {
